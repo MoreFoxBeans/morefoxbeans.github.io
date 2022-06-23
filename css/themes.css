@@ -1,0 +1,19 @@
+html.light, mfb-button.light {
+    --background-color: #f0f0f0;
+    --button-color: #e8e8e8;
+    --button-highlight: #d0d0d0;
+    --border-color: #d0d0d0;
+    --text-color: #707070;
+    --link-color: #7b9fc6;
+    --scrollbar-color: #70707040;
+}
+
+html.dark, mfb-button.dark {
+    --background-color: #404040;
+    --button-color: #383838;
+    --button-highlight: #303030;
+    --border-color: #303030;
+    --text-color: #a0a0a0;
+    --link-color: #5c7d9e;
+    --scrollbar-color: #a0a0a040;
+}

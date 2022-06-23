@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css');
+@import url('/css/themes.css');
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+::placeholder {
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+*::-webkit-scrollbar {
+    display: block;
+    width: 12px;
+}
+
+*::-webkit-scrollbar-button {
+    display: none;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #00000000;
+}
+
+*::-webkit-scrollbar-track-piece {
+    background-color: #00000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #00000000;
+    border: 4px solid transparent;
+    border-radius: 24px;
+    box-shadow: 4px 0px 0px 4px var(--scrollbar-color) inset;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    border: 3px solid transparent;
+    box-shadow: 4px 0px 0px 4px var(--scrollbar-color) inset;
+}
+
+* {
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color) transparent;
+}
+
+html {
+    --margins: .5cm;
+
+    --button-width: 15cm;
+    --button-height: 2em;
+    --border: 2px;
+    --radius: 0.4;
+    --shadow-base: .1cm;
+    --shadow: var(--shadow-base);
+
+    --seperator-width: 12cm;
+
+    --background-color: #808080;
+    --button-color: #808080;
+    --button-highlight: #808080;
+    --border-color: #808080;
+    --text-color: #808080;
+    --link-color: #808080;
+}
+
+body {
+    margin: 0;
+
+    background: var(--background-color);
+
+    font-family: 'Fredoka';
+    font-size: 20pt;
+    color: var(--text-color);
+
+    transition: background 0.2s ease-in-out,
+                color 0.2s ease-in-out;
+}
+
+mfb-fadein {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+
+    background: var(--background-color);
+
+    animation: fadeOut 1s ease-out forwards;
+}
+
+mfb-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 100vh;
+
+    overflow-y: auto;
+}
+
+mfb-innerpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    padding: var(--margins);
+}
+
+mfb-innerpage *:not(:last-child) {
+    margin-bottom: var(--margins);
+}
+
+mfb-button {
+    display: block;
+    width: calc(min(100vw - var(--margins) * 2, var(--button-width)));
+    max-width: var(--button-width);
+    height: var(--button-height);
+
+    color: var(--text-color);
+    line-height: calc(var(--button-height) - var(--border));
+
+    background: var(--button-color);
+    border-radius: calc(var(--button-height) * var(--radius) / 2.0);
+    border: var(--border) solid var(--border-color);
+
+    box-shadow: 0 var(--shadow) 0 var(--border-color);
+    transform: translateY(calc(var(--shadow) * -1));
+
+    user-select: none;
+    text-align: center;
+    white-space: pre-wrap;
+
+    overflow: hidden;
+
+    transition: box-shadow 0.3s cubic-bezier(0.2, 0, 0.2, 2.5),
+                transform 0.3s cubic-bezier(0.2, 0, 0.2, 2.5),
+                background 0.2s ease-in-out,
+                color 0.2s ease-in-out,
+                border 0.2s ease-in-out;
+}
+
+mfb-button::after {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: -1;
+    
+    background: var(--button-highlight);
+    opacity: .25;
+
+    transition: left 0.5s cubic-bezier(0.05, 0.28, 0.29, 0.81),
+                opacity 0.3s linear;
+}
+
+mfb-button:hover {
+    --shadow: calc(var(--shadow-base) * 1.7);
+
+    cursor: pointer;
+}
+
+mfb-button:hover::after {
+    left: 0;
+}
+
+mfb-button:active {
+    --shadow: var(--shadow-base);
+}
+
+mfb-button:active::after {
+    opacity: .125;
+}
+
+mfb-seperator {
+    display: block;
+    width: 100%;
+    max-width: var(--seperator-width);
+    height: var(--border);
+    
+    background: var(--border-color);
+
+    transition: background 0.2s ease-in-out;
+}
+
+mfb-copyright {
+    position: fixed;
+    bottom: calc(var(--margins) / 2.0);
+    right: calc(var(--margins) / 2.0);
+    z-index: 1000;
+}
+
+.button-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--button-height);
+    height: 100%;
+    line-height: calc(var(--button-height) - 2px);
+}
+
+.link-handler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: var(--link-color);
+}
