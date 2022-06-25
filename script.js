@@ -42,12 +42,36 @@ const themes = [
         id: 'watermelon2',
     },
     {
+        title: 'Trans Pride',
+        id: 'trans',
+    },
+    {
+        title: 'LGBTQIA+ Pride',
+        id: 'lgbtqia',
+    },
+    {
+        title: 'Pusheen Toast',
+        id: 'pusheentoast',
+    },
+    {
+        title: 'Pusheen Sprinkles',
+        id: 'pusheensprinkles',
+    },
+    {
         title: 'ඞඞඞ',
         id: 'sus',
     },
     {
         title: 'High Contrast',
         id: 'contrast',
+    },
+    {
+        title: 'Stealth',
+        id: 'stealth',
+    },
+    {
+        title: '',
+        id: 'invisible',
     },
     {
         title: 'LAST CHRISTMAS I GAVE YOU MY HEART BUT THE VERY NEXT DAY YOU GAVE IT AWAY THIS YEAR TO SAVE ME FROM TEARS ILL GIVE IT TO SOMEONE SPECIAL',

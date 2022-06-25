@@ -39,13 +39,37 @@ html.redbean, mfb-button.theme.redbean {
 }
 
 html.neon, mfb-button.theme.neon {
+    --background-image: url('/img/themes/neon.jpg');
     --background-color: #000;
-    --button-color: #000;
-    --border-color: #ff0;
-    --text-color: #ff0;
+    --button-color: #0e0e0e80;
+    --border-color: #ff8;
+    --text-color: #ff8;
     --link-color: #f80;
     --shadow: 0cm;
     --shadow-base: 0cm;
+}
+
+html.neon mfb-button:not(.theme), mfb-button.neon.theme {
+    box-shadow: 0 0 8px #ff0,
+                0 0 8px #ff0 inset;
+    text-shadow: 0 0 8px #ff0;
+}
+
+html.neon mfb-text {
+    text-shadow: 0 0 8px #ff0;
+}
+
+html.neon mfb-seperator {
+    box-shadow: 0 0 8px #ff0;
+}
+
+html:not(.neon) mfb-button.theme.neon {
+    background: #0e0e0e;
+}
+
+html.neon > body {
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 html.bluestars, mfb-button.theme.bluestars {
@@ -56,7 +80,12 @@ html.bluestars, mfb-button.theme.bluestars {
     --text-color: #718893;
     --link-color: #2b7191;
 }
-  
+
+html.bluestars > body {
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 html.purplestars, mfb-button.theme.purplestars {
     --background-image: url('/img/themes/stars-purple.jpg');
     --background-color: #3e093e;
@@ -66,6 +95,11 @@ html.purplestars, mfb-button.theme.purplestars {
     --link-color: #902b91;
 }
 
+html.purplestars > body {
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 html.watermelon1, mfb-button.theme.watermelon1 {
     --background-color: #F7A284;
     --button-color: #BADF93;
@@ -73,13 +107,75 @@ html.watermelon1, mfb-button.theme.watermelon1 {
     --text-color: #387E83;
     --link-color: #DB1073;
 }
-  
+
 html.watermelon2, mfb-button.theme.watermelon2 {
     --background-color: #BADF93;
     --button-color: #F7A284;
     --border-color: #E9597C;
     --text-color: #796268;
     --link-color: #36BFAB;
+}
+
+html.trans, mfb-button.theme.trans {
+    --background-image: url('/img/themes/trans.jpg');
+    --background-color: #d5d6db;
+    --button-image: url('/img/themes/transbutton.png');
+    --button-color: #e8e8e8;
+    --border-color: #a3c6ce;
+    --text-color: #707070;
+    --link-color: #7b9fc6;
+}
+
+html.trans > body {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+html.lgbtqia, mfb-button.theme.lgbtqia {
+    --background-image: url('/img/themes/lgbtqia.png');
+    --background-color: #fe2202;
+    --button-image: url('/img/themes/lgbtqiabutton.png');
+    --button-color: #e8e8e8;
+    --border-color: #995c7d;
+    --text-color: #404040;
+    --link-color: #7b9fc6;
+}
+
+html.lgbtqia > body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+html.pusheentoast, mfb-button.theme.pusheentoast {
+    --background-image: url('/img/themes/pusheentoast.jpg');
+    --background-color: #e1d3ed;
+    --button-color: #ebd8c9;
+    --border-color: #d2aea2;
+    --text-color: #7e5574;
+    --link-color: #7b9fc6;
+}
+
+html.pusheentoast > body {
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+html.pusheensprinkles, mfb-button.theme.pusheensprinkles {
+    --background-image: url('/img/themes/pusheensprinkles.jpg');
+    --background-color: #ffffff;
+    --button-color: #f8f8f8;
+    --border-color: #dac9d2;
+    --text-color: #7e5574;
+    --link-color: #7b9fc6;
+}
+
+html.pusheensprinkles > body {
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
 }
 
 html.sus, mfb-button.theme.sus {
@@ -107,6 +203,22 @@ html.contrast, mfb-button.theme.contrast {
     --shadow: 0cm;
     --shadow-base: 0cm;
     --radius: 0;
+}
+
+html.stealth, mfb-button.theme.stealth {
+    --background-color: #fff;
+    --button-color: #fff;
+    --border-color: #fff;
+    --text-color: #f0f0f0;
+    --link-color: #e8e8ff;
+}
+
+html.invisible, mfb-button.theme.invisible {
+    --background-color: #888;
+    --button-color: #888;
+    --border-color: #888;
+    --text-color: #888;
+    --link-color: #888;
 }
 
 html.lsd, mfb-button.theme.lsd {
