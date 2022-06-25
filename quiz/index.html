@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The sussy quiz!</title>
+        <link rel="stylesheet" href="/css/global.css">
+    </head>
+    <body>
+        <mfb-fadein></mfb-fadein>
+        <mfb-page>
+            <mfb-heading>The Sussy Quiz</mfb-heading>
+            <mfb-text>There are <span id="qnum">[Loading...]</span> questions.</mfb-text>
+            <mfb-spacer></mfb-spacer>
+            <mfb-button id="easy" icon="numeric-1-box">Easy</mfb-button>
+            <mfb-button id="medium" icon="numeric-2-box">Medium</mfb-button>
+            <mfb-button id="hard" icon="numeric-3-box">Impossible</mfb-button>
+            <mfb-seperator></mfb-seperator>
+            <mfb-button href="/" icon="home">Home</mfb-button>
+        </mfb-page>
+        <mfb-page page="question">
+            <mfb-status>Question #<span id="curq">[Loading...]</span></mfb-status>
+            <mfb-subheading id="question">[Loading...]</mfb-subheading>
+            <mfb-text><span id="lives">[Loading...]</span> lives</mfb-text>
+            <mfb-spacer></mfb-spacer>
+            <mfb-contentbox id="answers"></mfb-contentbox>
+            <mfb-seperator></mfb-seperator>
+            <mfb-button page="confirm" icon="arrow-left">Give up</mfb-button>
+        </mfb-page>
+        <mfb-page page="confirm">
+            <mfb-heading>Are you sure?</mfb-heading>
+            <mfb-text>You can't go back!</mfb-text>
+            <mfb-spacer></mfb-spacer>
+            <mfb-button page="main" icon="arrow-left">Yes, give up!</mfb-button>
+            <mfb-button page="question" icon="arrow-right">No, go back!</mfb-button>
+        </mfb-page>
+        <mfb-page page="dead">
+            <mfb-heading>You died!</mfb-heading>
+            <mfb-text>Your score: <span id="score">[Loading...]</span></mfb-text>
+            <mfb-spacer></mfb-spacer>
+            <mfb-button id="retry" icon="replay">Retry</mfb-button>
+            <mfb-button page="main" icon="arrow-left">Back to title</mfb-button>
+        </mfb-page>
+        <mfb-page page="win">
+            <mfb-heading>You won!</mfb-heading>
+            <mfb-text>Congrats! Anyways...</mfb-text>
+            <mfb-spacer></mfb-spacer>
+            <mfb-button page="main" icon="arrow-left">Back to title</mfb-button>
+        </mfb-page>
+        <mfb-copyright></mfb-copyright>
+        <script src="/js/global.js"></script>
+        <script src="questions.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

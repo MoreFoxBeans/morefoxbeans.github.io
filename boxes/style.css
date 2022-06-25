@@ -1,0 +1,20 @@
+#boxes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#boxes > mfb-button {
+    width: 30vmax;
+    height: 20vmax;
+    position: fixed;
+    animation: fadeIn .2s linear forwards;
+}
+
+#boxes > mfb-button.fadeOut {
+    animation: fadeOut 0.2s linear forwards;
+    pointer-events: none;
+}

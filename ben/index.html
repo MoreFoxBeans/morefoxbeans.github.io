@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Talking ben clone!</title>
+        <link rel="stylesheet" href="/css/global.css">
+    </head>
+    <body>
+        <mfb-fadein></mfb-fadein>
+        <mfb-page>
+            <mfb-heading>Talking Ben Clone</mfb-heading>
+            <mfb-spacer></mfb-spacer>
+            <mfb-button id="call" icon="phone-forward">Call Ben</mfb-button>
+            <mfb-button page="soundboard" icon="volume-high">Soundboard</mfb-button>
+            <mfb-seperator></mfb-seperator>
+            <mfb-button href="/" icon="home">Home</mfb-button>
+        </mfb-page>
+        <mfb-page page="call">
+            <mfb-text class="bold">You: <span id="you">[Loading...]</span></mfb-text>
+            <mfb-text>Ben: <span id="ben">[Loading...]</span></mfb-text>
+            <mfb-spacer></mfb-spacer>
+            <mfb-row>
+                <mfb-textinput id="response"></mfb-textinput>
+                <mfb-button id="submit" class="nogrow" icon="send"></mfb-button>
+            </mfb-row>
+            <mfb-seperator></mfb-seperator>
+            <mfb-button id="hangUp" icon="phone-hangup">Hang Up</mfb-button>
+        </mfb-page>
+        <mfb-page page="soundboard">
+            <mfb-heading>Soundboard</mfb-heading>
+            <mfb-spacer></mfb-spacer>
+            <mfb-row>
+                <mfb-button id="sbYes">Yes</mfb-button>
+                <mfb-button id="sbNo">No</mfb-button>
+            </mfb-row>
+            <mfb-row>
+                <mfb-button id="sbHohoho">Hohoho!</mfb-button>
+                <mfb-button id="sbBleugh">bleugh...</mfb-button>
+            </mfb-row>
+            <mfb-row>
+                <mfb-button id="sbAnswer">Answer</mfb-button>
+                <mfb-button id="sbHangUp">Hang Up</mfb-button>
+            </mfb-row>
+            <mfb-seperator></mfb-seperator>
+            <mfb-button page="main" icon="arrow-left">Back</mfb-button>
+        </mfb-page>
+        <mfb-copyright></mfb-copyright>
+        <script src="/js/global.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,19 +1,120 @@
-html.light, mfb-button.light {
+html.light, mfb-button.theme.light {
     --background-color: #f0f0f0;
     --button-color: #e8e8e8;
-    --button-highlight: #d0d0d0;
     --border-color: #d0d0d0;
     --text-color: #707070;
     --link-color: #7b9fc6;
-    --scrollbar-color: #70707040;
 }
 
-html.dark, mfb-button.dark {
+html.dark, mfb-button.theme.dark {
     --background-color: #404040;
     --button-color: #383838;
-    --button-highlight: #303030;
     --border-color: #303030;
     --text-color: #a0a0a0;
     --link-color: #5c7d9e;
-    --scrollbar-color: #a0a0a040;
+}
+
+html.matcha, mfb-button.theme.matcha {
+    --background-color: #a9d784;
+    --button-color: #9fd076;
+    --border-color: #8ec164;
+    --text-color: #56713f;
+    --link-color: #5da126;
+}
+  
+html.taro, mfb-button.theme.taro {
+    --background-color: #b898ce;
+    --button-color: #ac83ca;
+    --border-color: #a075bd;
+    --text-color: #654d77;
+    --link-color: #702f9d;
+}
+  
+html.redbean, mfb-button.theme.redbean {
+    --background-color: #4d272e;
+    --button-color: #442128;
+    --border-color: #3c1d23;
+    --text-color: #9b787f;
+    --link-color: #cc3554;
+}
+
+html.neon, mfb-button.theme.neon {
+    --background-color: #000;
+    --button-color: #000;
+    --border-color: #ff0;
+    --text-color: #ff0;
+    --link-color: #f80;
+    --shadow: 0cm;
+    --shadow-base: 0cm;
+}
+
+html.bluestars, mfb-button.theme.bluestars {
+    --background-image: url('/img/themes/stars-blue.jpg');
+    --background-color: #092f40;
+    --button-color: #0c374a;
+    --border-color: #072a39;
+    --text-color: #718893;
+    --link-color: #2b7191;
+}
+  
+html.purplestars, mfb-button.theme.purplestars {
+    --background-image: url('/img/themes/stars-purple.jpg');
+    --background-color: #3e093e;
+    --button-color: #480c4b;
+    --border-color: #39073b;
+    --text-color: #937194;
+    --link-color: #902b91;
+}
+
+html.watermelon1, mfb-button.theme.watermelon1 {
+    --background-color: #F7A284;
+    --button-color: #BADF93;
+    --border-color: #36BFAB;
+    --text-color: #387E83;
+    --link-color: #DB1073;
+}
+  
+html.watermelon2, mfb-button.theme.watermelon2 {
+    --background-color: #BADF93;
+    --button-color: #F7A284;
+    --border-color: #E9597C;
+    --text-color: #796268;
+    --link-color: #36BFAB;
+}
+
+html.sus, mfb-button.theme.sus {
+    --background-image: url('/img/themes/drip.jpg');
+    --background-color: #223;
+    --button-image: url('/img/themes/sus.jpg');
+    --button-color: #000;
+    --border-color: #000;
+    --text-color: #fff;
+    --link-color: #0ff;
+}
+
+html.sus > body {
+    background-size: 100% 100%;
+}
+
+html.contrast, mfb-button.theme.contrast {
+    --font: 'JetBrains Mono';
+    --font-size: 18pt;
+    --background-color: #000;
+    --button-color: #000;
+    --border-color: #fff;
+    --text-color: #fff;
+    --link-color: #44f;
+    --shadow: 0cm;
+    --shadow-base: 0cm;
+    --radius: 0;
+}
+
+html.lsd, mfb-button.theme.lsd {
+    --background-image: url('/img/themes/seizure1.gif');
+    --background-color: #ff00ff;
+    --button-image: url('/img/themes/seizure2.gif');
+    --button-color: #ff0000;
+    --border-color: #00ff00;
+    --text-color: #ffff00;
+    --link-color: #00ffff;
 }

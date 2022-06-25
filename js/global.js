@@ -7,31 +7,31 @@ let currentPage = 'main';
 class MFB_Page extends HTMLElement {
     constructor() {
         super();
-
-        const child = document.createElement('mfb-innerpage');
-
-        child.append(...this.childNodes);
-
-        this.appendChild(child);
-
-        if (typeof(this.getAttribute('page')) !== 'string') {
-            this.setAttribute('page', 'main');
-        } else {
-            this.style.display = 'none';
-        }
     }
-}
 
-class MFB_InnerPage extends HTMLElement {
-    constructor() {
-        super();
+    connectedCallback() {
+        if (!this.hasAttribute('noinit')) {
+            const child = document.createElement('mfb-innerpage');
+
+            child.append(...this.childNodes);
+
+            this.appendChild(child);
+
+            if (typeof(this.getAttribute('page')) !== 'string') {
+                this.setAttribute('page', 'main');
+            } else {
+                this.style.display = 'none';
+            }
+        }
     }
 }
 
 class MFB_Button extends HTMLElement {
     constructor() {
         super();
-        
+    }
+
+    connectedCallback() {
         const icon = this.getAttribute('icon');
 
         if (typeof(icon) === 'string') {
@@ -58,25 +58,19 @@ class MFB_Button extends HTMLElement {
             
             this.appendChild(linkHandler);
         }
-    }
-}
 
-class MFB_Seperator extends HTMLElement {
-    constructor() {
-        super();
-    }
-}
-
-class MFB_Text extends HTMLElement {
-    constructor() {
-        super();
+        if (this.innerText.length > 40) {
+            this.setAttribute('multiline', '');
+        }
     }
 }
 
 class MFB_Copyright extends HTMLElement {
     constructor() {
         super();
+    }
 
+    connectedCallback() {
         const link = document.createElement('a');
         link.href = 'https://github.com/morefoxbeans';
         link.innerText = '©MoreFoxBeans 2022';
@@ -85,17 +79,66 @@ class MFB_Copyright extends HTMLElement {
     }
 }
 
-class MFB_Fadein extends HTMLElement {
+class MFB_TextInput extends HTMLElement {
     constructor() {
         super();
     }
+
+    connectedCallback() {
+        this.setAttribute('contenteditable', '');
+    }
+}
+
+function prevent(event) {
+    event.preventDefault();
 }
 
 function showPage(page) {
-    document.querySelector(`mfb-page[page='${currentPage}']`).style.display = 'none';
+    if (currentPage) document.querySelector(`mfb-page[page='${currentPage}']`).classList.add('fadeOut');
+
     document.querySelector(`mfb-page[page='${page}']`).style.display = null;
+    document.querySelector(`mfb-page[page='${page}']`).classList.add('fadeIn');
+
+    let oldPage = currentPage;
+
+    window.setTimeout(function () {
+        if (oldPage) document.querySelector(`mfb-page[page='${oldPage}']`).style.display = 'none';
+        if (oldPage) document.querySelector(`mfb-page[page='${oldPage}']`).classList.remove('fadeOut');
+        document.querySelector(`mfb-page[page='${page}']`).classList.remove('fadeIn');
+    }, 400);
 
     currentPage = page;
+}
+
+function hidePage() {
+    document.querySelector(`mfb-page[page=${currentPage}]`).classList.add('fadeOut');
+
+    window.setTimeout(function () {
+        document.querySelector(`mfb-page[page=${currentPage}]`).classList.remove('fadeOut');
+        document.querySelector(`mfb-page[page=${currentPage}]`).style.display = 'none';
+        currentPage = undefined;
+    }, 400);
+}
+
+function refreshPage(page, middle) {
+    let pageEl = document.querySelector(`mfb-page[page='${page}']`);
+    
+    let newEl = pageEl.cloneNode(true);
+    newEl.setAttribute('noinit', '');
+    document.body.insertBefore(newEl, pageEl);
+
+    pageEl.removeAttribute('page');
+
+    pageEl.classList.add('fadeOut');
+    newEl.classList.add('fadeIn');
+
+    middle();
+
+    window.setTimeout(function () {
+        newEl.classList.remove('fadeIn');
+
+        pageEl.remove();
+    }, 400);
 }
 
 function setTheme(theme) {
@@ -118,12 +161,9 @@ function appendLoadEvent(func) {
 
 function global() {
     customElements.define('mfb-page', MFB_Page);
-    customElements.define('mfb-innerpage', MFB_InnerPage);
     customElements.define('mfb-button', MFB_Button);
-    customElements.define('mfb-seperator', MFB_Seperator);
-    customElements.define('mfb-text', MFB_Text);
     customElements.define('mfb-copyright', MFB_Copyright);
-    customElements.define('mfb-fadein', MFB_Fadein);
+    customElements.define('mfb-textinput', MFB_TextInput);
 
     setTheme(localStorage.getItem('theme') || 'light');
 

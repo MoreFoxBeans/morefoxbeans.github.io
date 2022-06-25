@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Math game!</title>
+        <link rel="stylesheet" href="/css/global.css">
+    </head>
+    <body>
+        <mfb-fadein></mfb-fadein>
+        <mfb-status id="score"></mfb-status>
+        <mfb-page>
+            <mfb-heading id="question">[Loading...]</mfb-heading>
+            <mfb-spacer></mfb-spacer>
+            <mfb-row>
+                <mfb-textinput id="answer"></mfb-textinput>
+                <mfb-button id="submit" class="nogrow" icon="send"></mfb-button>
+            </mfb-row>
+            <mfb-seperator></mfb-seperator>
+            <mfb-button href="/" icon="home">Home</mfb-button>
+        </mfb-page>
+        <mfb-page page="dead">
+            <mfb-heading>You failed!</mfb-heading>
+            <mfb-text>You had a score of <span id="finalscore">[Loading...]</span></mfb-text>
+            <mfb-spacer></mfb-spacer>
+            <mfb-button id="retry" icon="replay">Retry</mfb-button>
+        </mfb-page>
+        <mfb-copyright></mfb-copyright>
+        <script src="/js/global.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

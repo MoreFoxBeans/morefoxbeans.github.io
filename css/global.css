@@ -1,19 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css');
 @import url('/css/themes.css');
 
+@keyframes screenOut {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes pageIn {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pageOut {
+    0% { opacity: 1; transform: scale(1); z-index: -1; }
+    100% { opacity: 0; transform: scale(0.5); z-index: -1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
 
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+::selection {
+    background: #0268db60;
 }
 
 ::placeholder {
@@ -24,6 +40,7 @@
 *::-webkit-scrollbar {
     display: block;
     width: 12px;
+    height: 12px;
 }
 
 *::-webkit-scrollbar-button {
@@ -42,12 +59,11 @@
     background-color: #00000000;
     border: 4px solid transparent;
     border-radius: 24px;
-    box-shadow: 4px 0px 0px 4px var(--scrollbar-color) inset;
+    box-shadow: 0 0 0 4px var(--text-color) inset;
 }
 
 *::-webkit-scrollbar-thumb:hover {
     border: 3px solid transparent;
-    box-shadow: 4px 0px 0px 4px var(--scrollbar-color) inset;
 }
 
 * {
@@ -57,21 +73,23 @@
     scrollbar-color: var(--scrollbar-color) transparent;
 }
 
-html {
-    --margins: .5cm;
+html, mfb-button.theme {
+    --font: 'Fredoka';
+    --font-size: 20pt;
 
-    --button-width: 15cm;
+    --margins: .5cm;
+    --width: 16cm;
+
     --button-height: 2em;
     --border: 2px;
     --radius: 0.4;
     --shadow-base: .1cm;
     --shadow: var(--shadow-base);
 
-    --seperator-width: 12cm;
-
+    --background-image: none;
     --background-color: #808080;
+    --button-image: none;
     --button-color: #808080;
-    --button-highlight: #808080;
     --border-color: #808080;
     --text-color: #808080;
     --link-color: #808080;
@@ -81,13 +99,19 @@ body {
     margin: 0;
 
     background: var(--background-color);
-
-    font-family: 'Fredoka';
-    font-size: 20pt;
+    background-image: var(--background-image);
+    background-size: 100vh;
+    background-attachment: fixed;
+  
+    font-family: var(--font);
+    font-size: var(--font-size);
     color: var(--text-color);
 
     transition: background 0.2s ease-in-out,
                 color 0.2s ease-in-out;
+    
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 mfb-fadein {
@@ -100,7 +124,9 @@ mfb-fadein {
 
     background: var(--background-color);
 
-    animation: fadeOut 1s ease-out forwards;
+    animation: screenOut 1s ease-out forwards;
+
+    pointer-events: none;
 }
 
 mfb-page {
@@ -109,41 +135,87 @@ mfb-page {
     align-items: center;
     min-height: 100vh;
 
-    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+mfb-page.fadeIn {
+    animation: pageIn 0.4s cubic-bezier(0.3, 1, 0.5, 1) forwards;
+    pointer-events: none;
+}
+
+mfb-page.fadeOut {
+    animation: pageOut 0.2s linear forwards;
+    pointer-events: none;
 }
 
 mfb-innerpage {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 100vw;
+    gap: var(--margins);
 
     padding: var(--margins);
 }
 
-mfb-innerpage *:not(:last-child) {
-    margin-bottom: var(--margins);
+mfb-contentbox {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margins);
+}
+
+mfb-heading {
+    max-width: 80vw;
+    text-align: center;
+    white-space: pre-line;
+    font-size: 40pt;
+
+    margin-bottom: calc(var(--margins) * -0.5);
+}
+
+mfb-subheading {
+    max-width: 80vw;
+    text-align: center;
+    white-space: pre-line;
+    font-size: 30pt;
+
+    margin-bottom: calc(var(--margins) * -0.5);
+}
+
+mfb-text {
+    max-width: 80vw;
+    text-align: center;
+    white-space: pre-line;
 }
 
 mfb-button {
-    display: block;
-    width: calc(min(100vw - var(--margins) * 2, var(--button-width)));
-    max-width: var(--button-width);
-    height: var(--button-height);
+    display: flex;
+    flex-direction: row;
+    min-width: min(max(var(--button-height), 12vw), calc(var(--button-height) * 2.0));
+    width: calc(100vw - var(--margins) * 2.0);
+    max-width: var(--width);
+    min-height: var(--button-height);
+    padding: .2em;
 
+    font-family: var(--font);
+    font-size: var(--font-size);
     color: var(--text-color);
-    line-height: calc(var(--button-height) - var(--border));
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    user-select: none;
 
     background: var(--button-color);
+    background-image: var(--button-image);
+    background-size: 100% 100%;
     border-radius: calc(var(--button-height) * var(--radius) / 2.0);
     border: var(--border) solid var(--border-color);
 
     box-shadow: 0 var(--shadow) 0 var(--border-color);
     transform: translateY(calc(var(--shadow) * -1));
-
-    user-select: none;
-    text-align: center;
-    white-space: pre-wrap;
 
     overflow: hidden;
 
@@ -152,6 +224,18 @@ mfb-button {
                 background 0.2s ease-in-out,
                 color 0.2s ease-in-out,
                 border 0.2s ease-in-out;
+}
+
+mfb-button[multiline] {
+    flex-direction: column;
+    white-space: pre-line;
+    text-align: center;
+}
+
+@media only screen and (max-width: 9cm) {
+    mfb-button > .button-icon {
+        display: none;
+    }
 }
 
 mfb-button::after {
@@ -163,10 +247,10 @@ mfb-button::after {
     content: '';
     z-index: -1;
     
-    background: var(--button-highlight);
-    opacity: .25;
+    background: var(--border-color);
+    opacity: .3;
 
-    transition: left 0.5s cubic-bezier(0.05, 0.28, 0.29, 0.81),
+    transition: left 0.5s cubic-bezier(0.1, 0.5, 0.3, 0.8),
                 opacity 0.3s linear;
 }
 
@@ -188,10 +272,38 @@ mfb-button:active::after {
     opacity: .125;
 }
 
+mfb-textinput {
+    display: flex;
+    flex-direction: row;
+    min-width: calc(var(--button-height) * 2.0);
+    width: calc(100vw - var(--margins) * 2.0);
+    max-width: var(--width);
+    min-height: var(--button-height);
+    padding-top: calc(var(--shadow) * 2.0);
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+
+    background: var(--button-color);
+    border-radius: calc(var(--button-height) * var(--radius) / 2.0);
+    border: var(--border) solid var(--border-color);
+    outline: none;
+
+    box-shadow: 0 var(--shadow) 0 var(--border-color) inset;
+
+    overflow: hidden;
+
+    transition: background 0.2s ease-in-out,
+                color 0.2s ease-in-out,
+                border 0.2s ease-in-out;
+}
+
 mfb-seperator {
     display: block;
-    width: 100%;
-    max-width: var(--seperator-width);
+    width: calc(80vw - var(--margins) * 2.0);
+    max-width: calc(var(--width) * 0.8);
     height: var(--border);
     
     background: var(--border-color);
@@ -199,11 +311,61 @@ mfb-seperator {
     transition: background 0.2s ease-in-out;
 }
 
+mfb-status {
+    position: fixed;
+    top: calc(var(--margins) / 2.0);
+    left: calc(var(--margins) / 2.0);
+    z-index: 1000;
+
+    white-space: nowrap;
+}
+
 mfb-copyright {
     position: fixed;
     bottom: calc(var(--margins) / 2.0);
     right: calc(var(--margins) / 2.0);
     z-index: 1000;
+
+    white-space: nowrap;
+}
+
+mfb-row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--margins);
+    width: calc(100vw - var(--margins) * 2.0);
+    max-width: var(--width);
+}
+
+mfb-row > * {
+    width: unset;
+    max-width: unset;
+    flex-grow: 1;
+}
+
+mfb-spacer {
+    display: block;
+}
+
+mfb-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+
+    background: var(--background-color);
+    padding: calc(var(--margins) / 2.0);
+    border-top: var(--border) solid var(--border-color);
+}
+
+mfb-footer > * {
+    width: unset;
+    max-width: unset;
+}
+
+a {
+    color: var(--link-color);
 }
 
 .button-icon {
@@ -212,7 +374,9 @@ mfb-copyright {
     left: 0;
     width: var(--button-height);
     height: 100%;
+
     line-height: calc(var(--button-height) - 2px);
+    text-align: center;
 }
 
 .link-handler {
@@ -223,6 +387,18 @@ mfb-copyright {
     height: 100%;
 }
 
-a {
-    color: var(--link-color);
+.bold {
+    font-weight: 600;
+}
+
+.noselect {
+    user-select: none;
+}
+
+.nogrow {
+    flex-grow: 0;
+}
+
+.hidden {
+    display: none;
 }
