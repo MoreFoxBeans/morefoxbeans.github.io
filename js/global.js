@@ -1,3 +1,21 @@
+const replace = {
+    'tea': 'matcha',
+    'blood': 'redbean',
+    'stars': 'bluestars',
+    'starspurple': 'purplestars',
+    'rainbow1': 'watermelon1',
+    'rainbow2': 'watermelon2',
+    'chaos': 'watermelon2',
+    'rainbow': 'watermelon1',
+    'ugly': 'light',
+};
+
+let newTheme = replace[localStorage.getItem('theme')];
+
+if (newTheme) {
+    localStorage.setItem('theme', newTheme);
+}
+
 if (document.documentElement) {
     document.documentElement.className = localStorage.getItem('theme') || 'light';
 }
