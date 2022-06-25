@@ -133,7 +133,7 @@ html.trans > body {
 
 html.gay, mfb-button.theme.gay {
     --background-image: url('/img/themes/gay.jpg');
-    --background-color: #fcfc05;
+    --background-color: #b2b26d;
     --button-color: #fedf9c;
     --border-color: #cfb375;
     --text-color: #606e5b;
@@ -148,7 +148,7 @@ html.gay > body {
 
 html.bi, mfb-button.theme.bi {
     --background-image: url('/img/themes/bi.jpg');
-    --background-color: #fcfc05;
+    --background-color: #6d3a7f;
     --button-color: #db92cb;
     --border-color: #b863a5;
     --text-color: #8f3f7c;
@@ -163,7 +163,7 @@ html.bi > body {
 
 html.lesbian, mfb-button.theme.lesbian {
     --background-image: url('/img/themes/lesbian.jpg');
-    --background-color: #fcfc05;
+    --background-color: #bf4949;
     --button-color: #f2b19b;
     --border-color: #c57e71;
     --text-color: #725952;
