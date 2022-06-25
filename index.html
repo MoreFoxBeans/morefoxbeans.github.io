@@ -26,7 +26,36 @@
             <mfb-text>Page Theme</mfb-text>
             <mfb-contentbox id="themes"></mfb-contentbox>
             <mfb-seperator></mfb-seperator>
+            <mfb-button page="preview" icon="play">Preview</mfb-button>
+            <mfb-button page="credits" icon="format-list-bulleted">Credits</mfb-button>
             <mfb-button page="main" icon="arrow-left">Back</mfb-button>
+        </mfb-page>
+        <mfb-page page="preview">
+            <mfb-button icon="dots-grid">Button with Icon</mfb-button>
+            <mfb-row>
+                <mfb-button icon="">Left</mfb-button>
+                <mfb-button icon="">Right</mfb-button>
+            </mfb-row>
+            <mfb-row>
+                <mfb-button icon="numeric-1-box-multiple-outline"></mfb-button>
+                <mfb-button icon="numeric-2-box-multiple-outline"></mfb-button>
+                <mfb-button icon="numeric-3-box-multiple-outline"></mfb-button>
+            </mfb-row>
+            <mfb-row>
+                <mfb-textinput>Text Input</mfb-textinput>
+                <mfb-button class="nogrow" icon="send"></mfb-button>
+            </mfb-row>
+            <mfb-seperator></mfb-seperator>
+            <mfb-button page="themes" icon="arrow-left">Back</mfb-button>
+        </mfb-page>
+        <mfb-page page="credits">
+            <mfb-text><a href="https://unsplash.com/@davidjorre">David Jorre on Unsplash</a> for the stone background.</mfb-text>
+            <mfb-text><a href="https://unsplash.com/@bartek_16">Bartek Garbowicz on Unsplash</a> for the star background.</mfb-text>
+            <mfb-text><a href="https://marmalayde.tumblr.com/">Marmalayde on Tumblr</a> for the subtle pride flags.</mfb-text>
+            <mfb-text><a href="https://pusheen.com/">Pusheen</a> for the pusheen wallpapers.</mfb-text>
+            <mfb-text><a href="https://twitter.com/RTFKT/">RTFKT on Twitter</a> for the Among Us drip.</mfb-text>
+            <mfb-seperator></mfb-seperator>
+            <mfb-button page="themes" icon="arrow-left">Back</mfb-button>
         </mfb-page>
         <mfb-copyright></mfb-copyright>
         <script src="/js/global.js"></script>

@@ -119,11 +119,10 @@ html.watermelon2, mfb-button.theme.watermelon2 {
 html.trans, mfb-button.theme.trans {
     --background-image: url('/img/themes/trans.jpg');
     --background-color: #d5d6db;
-    --button-image: url('/img/themes/transbutton.png');
     --button-color: #e8e8e8;
-    --border-color: #a3c6ce;
+    --border-color: #d0d0d0;
     --text-color: #707070;
-    --link-color: #7b9fc6;
+    --link-color: #5897ca;
 }
 
 html.trans > body {
@@ -132,17 +131,46 @@ html.trans > body {
     background-position: center;
 }
 
-html.lgbtqia, mfb-button.theme.lgbtqia {
-    --background-image: url('/img/themes/lgbtqia.png');
-    --background-color: #fe2202;
-    --button-image: url('/img/themes/lgbtqiabutton.png');
-    --button-color: #e8e8e8;
-    --border-color: #995c7d;
-    --text-color: #404040;
-    --link-color: #7b9fc6;
+html.gay, mfb-button.theme.gay {
+    --background-image: url('/img/themes/gay.jpg');
+    --background-color: #fcfc05;
+    --button-color: #fedf9c;
+    --border-color: #cfb375;
+    --text-color: #606e5b;
+    --link-color: #c4411c;
 }
 
-html.lgbtqia > body {
+html.gay > body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+html.bi, mfb-button.theme.bi {
+    --background-image: url('/img/themes/bi.jpg');
+    --background-color: #fcfc05;
+    --button-color: #db92cb;
+    --border-color: #b863a5;
+    --text-color: #8f3f7c;
+    --link-color: #d0295f;
+}
+
+html.bi > body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+html.lesbian, mfb-button.theme.lesbian {
+    --background-image: url('/img/themes/lesbian.jpg');
+    --background-color: #fcfc05;
+    --button-color: #f2b19b;
+    --border-color: #c57e71;
+    --text-color: #725952;
+    --link-color: #d44c5e;
+}
+
+html.lesbian > body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -154,7 +182,7 @@ html.pusheentoast, mfb-button.theme.pusheentoast {
     --button-color: #ebd8c9;
     --border-color: #d2aea2;
     --text-color: #7e5574;
-    --link-color: #7b9fc6;
+    --link-color: #b6559f;
 }
 
 html.pusheentoast > body {
@@ -163,16 +191,16 @@ html.pusheentoast > body {
     background-attachment: fixed;
 }
 
-html.pusheensprinkles, mfb-button.theme.pusheensprinkles {
-    --background-image: url('/img/themes/pusheensprinkles.jpg');
+html.pusheencupcake, mfb-button.theme.pusheencupcake {
+    --background-image: url('/img/themes/pusheencupcake.jpg');
     --background-color: #ffffff;
     --button-color: #f8f8f8;
-    --border-color: #dac9d2;
-    --text-color: #7e5574;
-    --link-color: #7b9fc6;
+    --border-color: #dfd5da;
+    --text-color: #8f6685;
+    --link-color: #d87a94;
 }
 
-html.pusheensprinkles > body {
+html.pusheencupcake > body {
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
@@ -211,14 +239,6 @@ html.stealth, mfb-button.theme.stealth {
     --border-color: #fff;
     --text-color: #f0f0f0;
     --link-color: #e8e8ff;
-}
-
-html.invisible, mfb-button.theme.invisible {
-    --background-color: #888;
-    --button-color: #888;
-    --border-color: #888;
-    --text-color: #888;
-    --link-color: #888;
 }
 
 html.lsd, mfb-button.theme.lsd {

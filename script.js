@@ -34,28 +34,36 @@ const themes = [
         id: 'purplestars',
     },
     {
-        title: 'Watermelon 1',
+        title: 'Melon 1',
         id: 'watermelon1',
     },
     {
-        title: 'Watermelon 2',
+        title: 'Melon 2',
         id: 'watermelon2',
     },
     {
-        title: 'Trans Pride',
+        title: 'Subtle Trans',
         id: 'trans',
     },
     {
-        title: 'LGBTQIA+ Pride',
-        id: 'lgbtqia',
+        title: 'Subtle Gay',
+        id: 'gay',
+    },
+    {
+        title: 'Subtle Bi',
+        id: 'bi',
+    },
+    {
+        title: 'Subtle Lesbian',
+        id: 'lesbian',
     },
     {
         title: 'Pusheen Toast',
         id: 'pusheentoast',
     },
     {
-        title: 'Pusheen Sprinkles',
-        id: 'pusheensprinkles',
+        title: 'Pusheen Cupcake',
+        id: 'pusheencupcake',
     },
     {
         title: 'ඞඞඞ',
@@ -68,10 +76,6 @@ const themes = [
     {
         title: 'Stealth',
         id: 'stealth',
-    },
-    {
-        title: '',
-        id: 'invisible',
     },
     {
         title: 'LAST CHRISTMAS I GAVE YOU MY HEART BUT THE VERY NEXT DAY YOU GAVE IT AWAY THIS YEAR TO SAVE ME FROM TEARS ILL GIVE IT TO SOMEONE SPECIAL',
@@ -95,10 +99,15 @@ function setup() {
             setTheme(themes[i].id);
         });
 
-        row.appendChild(button);
-
-        if (i % 2 === 1 || i === themes.length - 1) {
+        if (i === themes.length - 1) {
             document.getElementById('themes').appendChild(row);
+            document.getElementById('themes').appendChild(button);
+        } else {
+            row.appendChild(button);
+
+            if (i % 2 === 1) {
+                document.getElementById('themes').appendChild(row);
+            }
         }
     }
 

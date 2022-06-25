@@ -9,13 +9,15 @@
 }
 
 @keyframes pageIn {
-    0% { opacity: 0; transform: scale(0.5); }
+    0% { opacity: 0; transform: scale(0); }
+    10% { opacity: 0; transform: scale(0.5); }
     100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes pageOut {
     0% { opacity: 1; transform: scale(1); z-index: -1; }
-    100% { opacity: 0; transform: scale(0.5); z-index: -1; }
+    50% { opacity: 0; transform: scale(0.5); z-index: -1; }
+    100% { opacity: 0; transform: scale(0); z-index: -1; }
 }
 
 @keyframes fadeIn {
@@ -97,6 +99,7 @@ html, mfb-button.theme {
 
 body {
     margin: 0;
+    min-height: 100vh;
 
     background: var(--background-color);
     background-image: var(--background-image);
@@ -147,7 +150,7 @@ mfb-page.fadeIn {
 }
 
 mfb-page.fadeOut {
-    animation: pageOut 0.2s linear forwards;
+    animation: pageOut 0.4s linear forwards;
     pointer-events: none;
 }
 
@@ -366,6 +369,7 @@ mfb-footer > * {
 
 a {
     color: var(--link-color);
+    transition: color .2s;
 }
 
 .button-icon {
