@@ -290,6 +290,8 @@ mfb-textinput {
     white-space: nowrap;
 
     background: var(--button-color);
+    background-image: var(--button-image);
+    background-size: 100% 100%;
     border-radius: calc(var(--button-height) * var(--radius) / 2.0);
     border: var(--border) solid var(--border-color);
     outline: none;
