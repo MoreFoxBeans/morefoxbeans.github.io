@@ -208,7 +208,7 @@ mfb-button {
     color: var(--text-color);
     justify-content: center;
     align-items: center;
-    white-space: nowrap;
+    white-space: pre;
     user-select: none;
 
     background: var(--button-color);
