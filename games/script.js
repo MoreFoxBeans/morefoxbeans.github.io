@@ -1,16 +1,16 @@
 const games = [
     {
-        page: 'All',
+        page: 'all',
         title: 'All Games',
         games: [],
     },
     {
-        page: 'Favorites',
+        page: 'favorites',
         title: 'My Favorites',
         games: [],
     },
     {
-        page: 'Ducklife',
+        page: 'duck-life',
         title: 'Duck Life',
         games: [
             { title: 'Duck Life 1', page: 'duck_life_1', icon: 'egg', },
@@ -21,7 +21,7 @@ const games = [
         ],
     },
     {
-        page: 'Papas',
+        page: 'papas',
         title: 'Papa\'s Series',
         games: [
             { title: 'Papa\'s Pizzeria*', page: 'pizzeria', icon: 'pizza', },
@@ -31,7 +31,7 @@ const games = [
         ],
     },
     {
-        page: 'Factory',
+        page: 'factory',
         title: 'Factory Balls',
         games: [
             { title: 'Factory Balls 1', page: 'factory_balls', icon: 'circle-slice-2', },
@@ -41,7 +41,7 @@ const games = [
         ],
     },
     {
-        page: 'Bonte',
+        page: 'bonte',
         title: 'Bonte Bart Puzzles',
         games: [
             { title: '40xEscape', page: '40xescape', icon: 'door', favorite: true, },
@@ -52,7 +52,7 @@ const games = [
         ],
     },
     {
-        page: 'Vex',
+        page: 'vex',
         title: 'Vex',
         games: [
             { title: 'Vex 3', page: 'vex_3', icon: 'hexagon-outline', favorite: true, },
@@ -61,7 +61,7 @@ const games = [
         ],
     },
     {
-        page: 'FireWater',
+        page: 'fire-water',
         title: 'Fireboy and Watergirl',
         games: [
             { title: '#1: Forest Temple', page: 'fb_and_wg_1', icon: 'forest', favorite: true, },
@@ -72,7 +72,7 @@ const games = [
         ],
     },
     {
-        page: 'Bloons',
+        page: 'bloons',
         title: 'Bloons Tower Defense',
         games: [
             { title: 'Bloons Tower Defense', page: 'bloons_td', icon: 'balloon', },
@@ -81,7 +81,7 @@ const games = [
         ],
     },
     {
-        page: 'Quiz',
+        page: 'quiz',
         title: 'The Impossible Quiz',
         games: [
             { title: 'The Impossible Quiz', page: 'impossible_quiz', icon: 'numeric-1-box-multiple-outline', favorite: true, },
@@ -92,7 +92,7 @@ const games = [
         ],
     },
     {
-        page: 'WHG',
+        page: 'whg',
         title: 'The World\'s Hardest Game',
         games: [
             { title: 'The World\'s Hardest Game', page: 'worlds_hardest_game', icon: 'star-half', favorite: true, },
@@ -100,7 +100,7 @@ const games = [
         ],
     },
     {
-        page: 'Other',
+        page: 'other',
         title: 'Others',
         games: [
             { title: 'Run 3', page: 'run_3', icon: 'run-fast', favorite: true, },

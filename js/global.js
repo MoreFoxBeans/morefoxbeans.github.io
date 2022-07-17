@@ -191,3 +191,9 @@ function global() {
 }
 
 appendLoadEvent(global);
+
+window.addEventListener('storage', function () {
+    if (document.documentElement.className !== localStorage.getItem('theme')) {
+        document.documentElement.className = localStorage.getItem('theme');
+    }
+}, false);
